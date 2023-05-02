@@ -1,3 +1,4 @@
+package chap02_prac;
 import java.util.*;
 public class Main {
 
