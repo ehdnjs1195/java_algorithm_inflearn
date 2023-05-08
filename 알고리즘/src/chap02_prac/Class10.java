@@ -33,16 +33,16 @@ public class Class10 {
 				isTop = true;
 				int center = arr[i][j];
 				if (i != 0)		//상
-					if (arr[i - 1][j] > center)
+					if (arr[i - 1][j] >= center)
 						isTop = false;
 				if (i != n - 1) //하
-					if (arr[i + 1][j] > center)
+					if (arr[i + 1][j] >= center)
 						isTop = false;
 				if (j != 0)		//좌
-					if (arr[i][j - 1] > center)
+					if (arr[i][j - 1] >= center)
 						isTop = false;
 				if (j != n - 1) //우
-					if (arr[i][j + 1] > center)
+					if (arr[i][j + 1] >= center)
 						isTop = false;
 				if (isTop)
 					answer++;
