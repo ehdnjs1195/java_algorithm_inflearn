@@ -18,26 +18,23 @@ public class Class02 {
 		
 	}
 
-	private ArrayList<Integer> solution(int n, int m, int[] a, int[] b) {
+	public ArrayList<Integer> solution(int n, int m, int[] a, int[] b) {
 		ArrayList<Integer> answer = new ArrayList<>();
-		for(int i=0; i<n; i++) {
+		for(int i=0; i<n; i++) { //겹치는 거 요소 배열에 담기
 			for(int j=0; j<m; j++) {
 				if(a[i] == b[j]) answer.add(b[j]);
 			}
 		}
 		
-		for(int i=0; i<answer.size(); i++) {
-			for(int j=i; j<answer.size(); j++) {
+		for(int i=0; i<answer.size(); i++) { //배열 오름차순으로 정렬하기.
+			for(int j=answer.size()-i-1; j>=0; j--) {
 				if(j < answer.size()-1 && answer.get(j) > answer.get(j+1)) {
 					int tmp = answer.get(j);
-					System.out.print(tmp + " ");
 					answer.set(j, answer.get(j+1));
 					answer.set(j+1, tmp);
 				}
 			}
 		}
-		System.out.println();
-		
 		return answer;
 	}
 
